@@ -29,7 +29,10 @@ protected:
 	
 private:
 	UPROPERTY(EditAnywhere)
-	float MovementSpeed = 25;
+	float MovementSpeed = 250;
+
+	FVector GlobalTargetLocation;
+	FVector GlobalStartLocation;
 	
 	
 };
