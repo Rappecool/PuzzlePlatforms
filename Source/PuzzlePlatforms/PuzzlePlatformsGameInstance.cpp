@@ -39,4 +39,10 @@ void UPuzzlePlatformsGameInstance::Join(const FString &IpAddress)
 
 	Engine->AddOnScreenDebugMessage(-1, 2, FColor::Green, FString::Printf( TEXT("Joining %s"), *IpAddress));
 
+	APlayerController* PlayerController = GetFirstLocalPlayerController();
+
+	if (!ensure(PlayerController != nullptr))
+		return;
+		
+	PlayerController->ClientTravel(IpAddress, TRAVEL_Absolute);
 }
